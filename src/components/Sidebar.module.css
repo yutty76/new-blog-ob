@@ -1,0 +1,95 @@
+.sidebar {
+  width: 100%; /* モバイルでは100%幅 */
+  padding: 1rem;
+}
+
+.sidebarSection {
+  margin-bottom: 1.5rem;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.sidebarSection h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.sidebarSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarSection li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebarSection a {
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebarSection a:hover {
+  color: #0070f3;
+  text-decoration: underline;
+}
+
+.sidebarSection input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.sidebarSection button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e0e0e0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.tag:hover {
+  background-color: #0070f3;
+  color: white;
+}
+
+/* タブレット対応（768px以上） */
+@media (min-width: 768px) {
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* デスクトップ対応（1024px以上） */
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 300px; /* デスクトップでは固定幅 */
+    display: block;
+  }
+}

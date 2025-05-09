@@ -1,0 +1,216 @@
+/* コンテナ設定 */
+.container {
+  display: flex;
+  flex-direction: column; /* モバイルではカラム表示 */
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.main {
+  width: 100%;
+}
+
+.pageTitle {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  border-bottom: 3px solid #0070f3;
+  padding-bottom: 0.5rem;
+}
+
+/* 記事カードのグリッド */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* モバイルでは1カラム */
+  gap: 1rem;
+}
+
+.postCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.postCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.postLink {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.thumbnailContainer {
+  position: relative;
+  height: 180px;
+  background-color: #f0f0f0;
+}
+
+.thumbnail {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.noThumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #999;
+  font-size: 1rem;
+}
+
+.postInfo {
+  padding: 1rem;
+}
+
+.postTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* 新しい複数カテゴリコンテナのスタイル */
+.postCategoriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* タグ間のスペース */
+  margin-bottom: 0.5rem; /* 日付とのスペース */
+}
+
+/* カテゴリタグの新しいスタイル (以前の .postCategory から変更) */
+.categoryTag {
+  display: inline-block;
+  background-color: #e9ecef; /* 少し落ち着いた背景色 */
+  color: #495057; /* 暗めの文字色 */
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px; /* より丸みを帯びた形 */
+  font-size: 0.75rem; /* 少し小さめのフォント */
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.categoryTag:hover {
+  background-color: #007bff; /* ホバー時の色 */
+  color: white;
+}
+
+.postDate {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.postTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.postTag {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* 全ての記事を見るボタン */
+.viewAllButtonContainer {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.viewAllButton {
+  display: inline-block;
+  background-color: #0070f3;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.viewAllButton:hover {
+  background-color: #0051a8;
+}
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.paginationLink {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.paginationLink:hover {
+  background-color: #0070f3;
+  color: white;
+}
+
+.paginationInfo {
+  color: #666;
+}
+
+/* タブレット対応（768px以上） */
+@media (min-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .posts {
+    grid-template-columns: repeat(2, 1fr); /* タブレットでは2カラム */
+    gap: 1.5rem;
+  }
+  
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+}
+
+/* 小型デスクトップ対応（1024px以上） */
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row; /* デスクトップでは横並び */
+    max-width: 1200px;
+    padding: 2rem;
+  }
+  
+  .main {
+    flex: 1;
+  }
+  
+  .posts {
+    grid-template-columns: repeat(2, 1fr); /* 小型デスクトップでは2カラム */
+  }
+  
+  .pageTitle {
+    font-size: 2rem;
+  }
+}
+
+/* 大型デスクトップ対応（1280px以上） */
+@media (min-width: 1280px) {
+  .posts {
+    grid-template-columns: repeat(3, 1fr); /* 大型デスクトップでは3カラム */
+  }
+}
